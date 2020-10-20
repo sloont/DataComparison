@@ -99,10 +99,23 @@ public class DataComparison
    
    public static void printResult(PrintWriter outp, String courseID, int groupNo, double avg)
    {
+      int noOfSymbols;
+      int count;
+      
       if (groupNo == 1)
          outp.print("   " + courseID + "  ");
       else
          outp.print("        ");
+         
+      noOfSymbols = (int)(avg) / 2;
+      
+      if (groupNo == 1)
+         for (count = 1; count <= noOfSymbols; count++)
+            outp.print("*");
+      else
+         for (count = 1; count <= noOfSymbols; count++)
+            outp.print("#");
+      outp.println();
       
       outp.printf("%12d %20.2f%n", groupNo, avg);
    }//end printResult
