@@ -117,6 +117,12 @@ public class DataComparison
             outp.print("#");
       outp.println();
       
-      outp.printf("%12d %20.2f%n", groupNo, avg);
    }//end printResult
+   
+   public static void printHeading(PrintWriter outp)
+   {
+      outp.println("Course                            Course Average");
+      outp.println(" ID    0     10    20    30    40    50    60    70    80    90    100");
+      outp.println("       |.....| .....|.....|.....|.....|.....|.....|.....|.....|.....|");
+   }//end printHeading
 }
