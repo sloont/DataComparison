@@ -27,13 +27,14 @@ public class DataComparison
       
       numberOfCourses = 0; //step 5
    //print heading step 6
-   
-      outfile.println("Course ID       Group No.      Course Average");
+      printHeading(outfile);
       
       while (group1.hasNext() && group2.hasNext()) //step 7
       {
          courseID1 = group1.next();
          courseID2 = group2.next();
+         
+         
          
          if (!courseID1.equals(courseID2))
          {
@@ -49,6 +50,7 @@ public class DataComparison
          {
             avg1 = calculateAverage(group1);
             avg2 = calculateAverage(group2);
+            
             printResult(outfile, courseID1, 1, avg1);
             printResult(outfile, courseID2, 2, avg2);
             
@@ -66,6 +68,9 @@ public class DataComparison
          System.out.println("Ran out of data for group 1 before group 2.");
       else
       {
+         outfile.println("Group 1 -- ****");
+         outfile.println("Group 2 -- ####");
+         outfile.println();
          outfile.printf("Avg for group 1: %.2f %n", avgGroup1 / numberOfCourses);
          outfile.printf("Avg for group 2: %.2f %n", avgGroup2 / numberOfCourses);
       }
@@ -122,7 +127,7 @@ public class DataComparison
    public static void printHeading(PrintWriter outp)
    {
       outp.println("Course                            Course Average");
-      outp.println(" ID    0     10    20    30    40    50    60    70    80    90    100");
-      outp.println("       |.....| .....|.....|.....|.....|.....|.....|.....|.....|.....|");
+      outp.println(" ID   0    10   20   30   40   50   60   70   80   90   100");
+      outp.println("      |....| ....|....|....|....|....|....|....|....|....|");
    }//end printHeading
 }
